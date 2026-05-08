@@ -231,10 +231,16 @@ func _handle_round_end(round_winner: int, is_draw: bool) -> void:
 
 	if not is_draw:
 		winner = round_winner
-		if round_winner == 1:
-			score_player1 += 1
-		else:
-			score_player2 += 1
+
+		# Solo sumar puntos en modo local.
+		# En red, el servidor ya sincronizó los scores.
+		var is_local = not multiplayer.multiplayer_peer or multiplayer.multiplayer_peer is OfflineMultiplayerPeer
+
+		if is_local:
+			if round_winner == 1:
+				score_player1 += 1
+			else:
+				score_player2 += 1
 
 	_refresh_visual()
 
