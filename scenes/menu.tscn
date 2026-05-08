@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxm00vj0d30ck"]
+
+[ext_resource type="Script" uid="uid://boxeeurrf5uxb" path="res://scripts/menu.gd" id="1_13sgg"]
+[ext_resource type="Texture2D" uid="uid://r4brfwsh32yi" path="res://assets/exit.png" id="2_i6lef"]
+[ext_resource type="Texture2D" uid="uid://bufg6w6tr11en" path="res://assets/PLAY_button.png" id="3_13sgg"]
+[ext_resource type="Texture2D" uid="uid://fbhkpihayfnc" path="res://assets/ConectaT.png" id="4_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://5ffph1ivuyal" path="res://assets/credits.png" id="5_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://od1v68phrahr" path="res://assets/tutorial.png" id="6_6cdou"]
+[ext_resource type="Texture2D" uid="uid://w60sk8b3qsgj" path="res://assets/yellowdot.png" id="7_i42df"]
+[ext_resource type="Texture2D" uid="uid://beegh0hso31e5" path="res://assets/redDot.png" id="8_7jp70"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -69.0
+offset_right = -20.0
+offset_bottom = -69.0
+script = ExtResource("1_13sgg")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+
+[node name="ExitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
+offset_left = 610.0
+offset_top = 383.00003
+offset_right = 810.0
+offset_bottom = 452.00003
+scale = Vector2(1.2118251, 1.3718157)
+theme_override_font_sizes/font_size = 24
+icon = ExtResource("2_i6lef")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlayButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
+offset_left = 355.0
+offset_top = 366.0
+offset_right = 580.7539
+offset_bottom = 482.0085
+scale = Vector2(1.2491475, 1.2585285)
+theme_override_font_sizes/font_size = 24
+icon = ExtResource("3_13sgg")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 456.0
+offset_top = 138.0
+offset_right = 721.0
+offset_bottom = 379.0
+alignment = 1
+
+[node name="ConectaT" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(128, 66)
+scale = Vector2(1.2352188, 1.3418531)
+texture = ExtResource("4_mj5lg")
+
+[node name="TutorialButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 68.00001
+offset_top = 534.0
+offset_right = 140.0
+offset_bottom = 603.0
+scale = Vector2(0.72953105, 0.69193375)
+icon = ExtResource("5_ufwb2")
+flat = true
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 991.00006
+offset_top = 528.00006
+offset_right = 1158.0
+offset_bottom = 716.00006
+scale = Vector2(0.6800708, 0.64293236)
+icon = ExtResource("6_6cdou")
+flat = true
+icon_alignment = 1
+
+[node name="Yellowdot" type="Sprite2D" parent="."]
+position = Vector2(590, 679)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_i42df")
+
+[node name="Yellowdot2" type="Sprite2D" parent="."]
+position = Vector2(-1, 333)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("7_i42df")
+
+[node name="Yellowdot3" type="Sprite2D" parent="."]
+position = Vector2(871, 211)
+texture = ExtResource("7_i42df")
+
+[node name="Yellowdot4" type="Sprite2D" parent="."]
+position = Vector2(777, 262)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_i42df")
+
+[node name="RedDot" type="Sprite2D" parent="."]
+position = Vector2(1148, 401)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_7jp70")
+
+[node name="RedDot2" type="Sprite2D" parent="."]
+position = Vector2(1130, 93)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("8_7jp70")
+
+[node name="RedDot3" type="Sprite2D" parent="."]
+position = Vector2(7.000122, 67)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("8_7jp70")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_pressed"]
